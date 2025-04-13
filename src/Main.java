@@ -1,61 +1,39 @@
 public class Main {
     public static void main(String[] args) {
         // Задача 1
-        int[] intArray = new int[]{1, 2, 3};
-
-        double[] doubleArray = {1.57, 7.654, 9.986};
-
-        String[] stringArray = {"apple", "banana", "orange"};
+        int[] salaryPerMonth = new int[] {12_000, 15_000, 17_000, 10_000, 13_000};
+        int money = 0;
+        for (int i = 0; i < salaryPerMonth.length; i++) {
+            money += salaryPerMonth[i];
+        }
+        System.out.println("Сумма трат за месяц составила " + money + " рублей\n");
 
         // Задача 2
-        System.out.print(intArray[0]);
-        for (int i = 1; i < intArray.length; i++) {
-            System.out.print(", " + intArray[i]);
-        }
-        System.out.println();
-
-        System.out.print(doubleArray[0]);
-        for (int i = 1; i < doubleArray.length; i++) {
-            System.out.print(", " + doubleArray[i]);
-        }
-        System.out.println();
-
-        System.out.print(stringArray[0]);
-        for (int i = 1; i < stringArray.length; i++) {
-            System.out.print(", " + stringArray[i]);
-        }
-        System.out.println();
-
-        // Задача 3
-        System.out.print(intArray[intArray.length - 1]);
-        for (int i = intArray.length - 2; i >= 0; i--) {
-            System.out.print(", " + intArray[i]);
-        }
-        System.out.println();
-
-        System.out.print(doubleArray[doubleArray.length - 1]);
-        for (int i = doubleArray.length - 2; i >= 0; i--) {
-            System.out.print(", " + doubleArray[i]);
-        }
-        System.out.println();
-
-        System.out.print(stringArray[stringArray.length - 1]);
-        for (int i = stringArray.length - 2; i >= 0; i--) {
-            System.out.print(", " + stringArray[i]);
-        }
-        System.out.println();
-
-        // Задача 4
-        for (int i = 0; i < intArray.length; i++) {
-            if (intArray[i] % 2 != 0) {
-                intArray[i] += 1;
+        int[] spending = new int[] {11_000, 13_000, 15_000, 17_000, 19_000};
+        int maxSpend = -1;
+        int minSpend = spending[0];
+        for (int i = 0; i < spending.length;i++) {
+            if (spending[i] > maxSpend) {
+                maxSpend = spending[i];
+            }
+            if (spending[i] < minSpend) {
+                minSpend = spending[i];
             }
         }
+        System.out.println("Минимальная сумма трат за неделю составила " + minSpend + " рублей. Максимальная сумма трат за неделю составила " + maxSpend +" рублей\n");
 
-        System.out.print(intArray[0]);
-        for (int i = 1; i < intArray.length; i++) {
-            System.out.print(", " + intArray[i]);
+        // Задача 3
+        int[] average = new int[] {22_000, 32_000, 45_000, 32_213, 56_000};
+        double summa = 0;
+        for (int i = 0; i < average.length; i++) {
+            summa += average[i];
         }
-        System.out.println();
+        System.out.println("Средняя сумма трат за месяц составила " + (summa / average.length) + " рублей");
+
+        // Задача 4
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i != -1; i--) {
+            System.out.print(reverseFullName[i]);
+        }
     }
 }
