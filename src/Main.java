@@ -1,5 +1,5 @@
 public class Main {
-
+  
     public static String isLeapYear(int year) {
         String result;
         if (year % 4 == 0 || year % 400 == 0 && year % 100 != 0) {
@@ -49,5 +49,23 @@ public class Main {
         System.out.println(isLeapYear(2000));
         System.out.println(appVersionControl(0, 2023));
         System.out.println(calculateDeliveryDays(20));
+
+    public static void main(String[] args) {
+        System.out.println("Task 1");
+        String firstName = "Ivan ";
+        String midleName = "Ivanovich ";
+        String lastName = "Ivanov ";
+        String fullName;
+        fullName = lastName + firstName + middleName;
+        System.out.println("Ф.И.О сотрудника - " + fullName + "\n");
+
+        System.out.println("Task 2");
+        String upperFullName = fullName.toUpperCase();
+        System.out.println("Данные Ф.И.О сотрудника для заполнения отчета " + upperFullName + "\n");
+
+        System.out.println("Task 3");
+        fullName = "Иванов Семён Семёнович";
+        fullName = fullName.replace('ё', 'е');
+        System.out.println("Данные Ф.И.О сотрудника " + fullName);
     }
 }
