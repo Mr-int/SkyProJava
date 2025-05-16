@@ -12,5 +12,7 @@ public class Main {
         System.out.println("Используем setter");
         Book1.setYearOfMade(2000);
         System.out.println("Книга " + Book1.getBookName() + " написанная " + Book1.getAuthor() + " в " + Book1.getYearOfMade() + " году");
+
+        System.out.println(Book1.getAuthor());
     }
 }

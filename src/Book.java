@@ -28,4 +28,24 @@ public class Book {
     public void setYearOfMade(int yearOfMade) {
         this.yearOfMade = yearOfMade;
     }
+
+    @Override
+    public String toString() {
+//        return BookName + " - эта книга была написана" + author + " в" + yearOfMade + " году";
+        return author.toString();
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(BookName);
+    }
 }
