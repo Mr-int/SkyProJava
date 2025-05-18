@@ -5,7 +5,7 @@ public class Book {
 
     public Book(String BookName, Author author, int yearOfMade) {
         if (author == null) {
-            throw new IllegalArgumentException("Книга должна иметь автора.");
+            throw new IllegalArgumentException("Книга не может быть без автора");
         }
         this.BookName = BookName;
         this.author = author;
@@ -37,11 +37,14 @@ public class Book {
 
     @Override
     public boolean equals(Object other) {
-        if (this.getClass() != other.getClass()) {
-            return false;
-        } else {
+        if (this == other) {
             return true;
         }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        Book book = (Book) other;
+        return yearOfMade == book.yearOfMade && BookName.equals(book.BookName) && author.equals(book.author);
     }
 
     @Override
